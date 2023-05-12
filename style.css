@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    background-color: rgb(198, 225, 247);
+}
+
+.title{
+    display: flex;
+}
+
+.form {
+    display: flex;
+    
+}

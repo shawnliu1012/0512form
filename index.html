@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,29 +8,33 @@
     <link rel="stylesheet" href="style.css">
     <title>ChatGPT預約平台</title>
 </head>
+
 <body>
     <h1>ChatGPT預約平台</h1>
-
-    <h2>當前預約</h2>
-    <ul>
-    {% for reservation in reservations %}
-        <li>{{ reservation.applicant }} 已預約 {{ reservation.account }} 從 {{ reservation.start_time }} 到 {{ reservation.end_time }}</li>
-    {% endfor %}
-    </ul>
-
-    <h2>新的預約</h2>
-    <form action="/reserve" method="post">
-        <label for="applicant">申請人姓名:</label><br>
-        <input type="text" id="applicant" name="applicant"><br>
-        <label for="account">選擇帳號:</label><br>
-        <input type="text" id="account" name="account"><br>
-        <label for="start_time">開始時間:</label><br>
-        <input type="time" id="start_time" name="start_time"><br>
-        <label for="end_time">結束時間:</label><br>
-        <input type="time" id="end_time" name="end_time"><br>
-        <input type="submit" value="提交">
-    </form>
-
+    <div class="title">
+        <h2>當前預約</h2>
+        <ul>
+            {% for reservation in reservations %}
+            <li>{{ reservation.applicant }} 已預約 {{ reservation.account }} 從 {{ reservation.start_time }} 到 {{
+                reservation.end_time }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="form-part">
+        <h2>新的預約</h2>
+        <form class="form" action="/reserve" method="post">
+            <label for="applicant">申請人姓名:</label>
+            <input type="text" id="applicant" name="applicant">
+            <label for="account">選擇帳號:</label>
+            <input type="text" id="account" name="account">
+            <label for="start_time">開始時間:</label>
+            <input type="time" id="start_time" name="start_time">
+            <label for="end_time">結束時間:</label>
+            <input type="time" id="end_time" name="end_time">
+            <input type="submit" value="提交">
+        </form>
+    </div>
     <script src="script.js"></script>
 </body>
+
 </html>
